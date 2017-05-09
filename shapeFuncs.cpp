@@ -33,7 +33,8 @@ double distanceBetween(Point p, Point q) {
 
 
 void initPoint(struct Point *p, double xVal, double yVal) {
-  //return; //@@@ for a void function, the stub is just a bare return that does nothing
+  (*p).x = xVal;//makes the x part of the structure at location *p the entered Xvalue
+  (*p).y = yVal; //makes *p struct's y value the entered y value
 }
 
 
@@ -56,10 +57,6 @@ string boxToString(Box b, int precision) {
 bool pointsApproxEqual(Point p1, 
 		       Point p2, 
 		       double tolerance) {
-  // Two points are approximately equal if the distance between them
-  // is less than our tolerance.  (If we want to test for 
-  // exact equality, we can pass in a value of zero.)
-
   return distanceBetween(p1,p2) < tolerance;
 
 }
@@ -77,10 +74,15 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
   // You may find it helpful to abstract out an "approxEqual" function that takes
   // two parameters of type "double".  Put the prototype in your utility.h 
   // and the definition in your utility.cpp file.
+  if(distanceBetween(b1.ul,b2.ul) < tolerance){
+	if(abs(b1.height-b2.height)<tolerance){
+  		if(abs(b1.width-b2.width)<tolerance){
+			return true;
+			}
+		}
+	}										      
 
-  // TODO: FILL THIS IN WITH APPROPRIATE CODE
-
-  return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
+ return false;
 }
 
 
