@@ -37,7 +37,6 @@ void initPoint(struct Point *p, double xVal, double yVal) {
   (*p).y = yVal; //makes *p struct's y value the entered y value
 }
 
-
 string pointToString(Point p, int precision) {
   ostringstream oss;
   oss << setprecision(precision); // set precision to 3 decimal places
@@ -46,10 +45,12 @@ string pointToString(Point p, int precision) {
 }
 
 string boxToString(Box b, int precision) {
-  
+  ostringstream oss;
+  oss << setprecision(precision);
+  oss << "[ul=(" << b.ul.x<<"," <<b.ul.y <<"), w=" <<b.width <<",h=" <<b.height << "]";
   // SAMPLE FORMAT: [ul=(3.4,-5), w=5,h=7]
   
-  return "stub!"; // TODO: Delete this line and comment and replace with appropriate code
+  return oss.str();
 }
  
 
