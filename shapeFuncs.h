@@ -1,10 +1,10 @@
-#ifndef BOXFUNCS_H
-#define BOXFUNCS_H
+#ifndef SHAPEFUNCS_H
+#define SHAPEFUNCS_H
 
 #include <string>
 using std::string;
 #include "shapes.h"
-
+//using namespace std;
 
 string pointToString(Point p, int precision=3);
 string boxToString(Box b, int precision=3);

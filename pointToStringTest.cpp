@@ -5,6 +5,7 @@
 
 
 
+
 int main() {
 
   struct Point p1,p2;

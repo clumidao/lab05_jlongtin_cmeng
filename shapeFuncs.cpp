@@ -6,8 +6,6 @@
 #include <cmath>
 
 using namespace std;
-
-
 #include "shapes.h"
 #include "shapeFuncs.h"
 #include "utility.h"
